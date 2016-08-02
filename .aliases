@@ -1,0 +1,2 @@
+# Better ls
+alias ll="ls -lha"

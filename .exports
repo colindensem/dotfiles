@@ -1,0 +1,12 @@
+# Set Default EDITOR
+export EDITOR=vim
+export VISUAL=vim
+
+
+# RUBY
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# Local libraries to overload all others
+export PATH=./bin:$HOME/bin:$PATH
