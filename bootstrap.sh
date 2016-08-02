@@ -25,20 +25,28 @@ doRsync(){
 		-avh --no-perms . ~;
 }
 
+doInstall() {
+	puts "Installing helpers"
+	source "$DOTFILES/installers/kiex.sh"
+}
+
 reloadConfig() {
 	puts "Reloading Config"
 	git config --global core.excludesfile ~/.gitignore_global
 	puts "Reloading ZSH"
-	exec /bin/zsh -l
+	exec $SHELL
 }
 
 doAll() {
 	doUpdateRepo
+	doInstall
 	doRsync
 }
 
 if [ "$1" == "--sync" ]; then
 	doRsync
+elif [ "$1" == "--install" ]; then
+	doInstall
 else
 	doAll
 fi
