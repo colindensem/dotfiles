@@ -27,6 +27,7 @@ doRsync(){
 
 doInstall() {
 	puts "Installing helpers"
+	source "$DOTFILES/installers/kerl.sh"
 	source "$DOTFILES/installers/kiex.sh"
 }
 

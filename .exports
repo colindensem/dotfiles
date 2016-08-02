@@ -2,6 +2,8 @@
 export EDITOR=vim
 export VISUAL=vim
 
+# KERL - Erlang
+test -s "$HOME/.kerl/kerl" && export PATH="$HOME/.kerl:$PATH"
 # KIEX - Elixir
 test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
