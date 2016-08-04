@@ -29,6 +29,7 @@ doInstall() {
 	puts "Installing helpers"
 	source "$DOTFILES/installers/kerl.sh"
 	source "$DOTFILES/installers/kiex.sh"
+	source "$DOTFILES/installers/nvm.sh"
 }
 
 reloadConfig() {
