@@ -16,6 +16,8 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
+#HEROKU
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # Local libraries to overload all others
 export PATH=./bin:$HOME/bin:$PATH
