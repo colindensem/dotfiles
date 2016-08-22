@@ -73,6 +73,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # Source dotfiles
 source ~/.aliases
 source ~/.exports
+source ~/.functions
+
 
 # Start SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ;
