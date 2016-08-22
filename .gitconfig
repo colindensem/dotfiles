@@ -10,7 +10,7 @@
 	branch = auto
 	diff = auto
 [commit]
-	gpgsign = true
+	gpgsign = false
 [diff "bin"]
 	textconv = hexdump -v -C
 [help]

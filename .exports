@@ -1,6 +1,7 @@
 # Set Default EDITOR
 export EDITOR=vim
 export VISUAL=vim
+export TERM="xterm-256color"
 
 # KERL - Erlang
 test -s "$HOME/.kerl/kerl" && export PATH="$HOME/.kerl:$PATH"
