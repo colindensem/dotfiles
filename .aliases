@@ -1,8 +1,0 @@
-# Better ls
-alias ll="ls -lha"
-
-#Bundler
-alias b="bundle"
-
-# Include Local alias file
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local 

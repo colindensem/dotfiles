@@ -13,16 +13,18 @@ doUpdateRepo() {
 	git pull origin master
 }
 
-doRsync(){ 
-  	puts "Syncing"
-    	rsync --exclude ".git/" \
-		--exclude "installers/" \
- 	       	--exclude "bootstrap.sh" \
-        	--exclude "README.md" \
-	        --exclude "LICENSE" \
-       	 	--exclude ".gitignore" \
-	 	--filter=':- .gitignore' \
-		-avh --no-perms . ~;
+
+doLink() {
+  ln -s $DOTFILES/.bash ~/.bash
+  ln -s $DOTFILES/.bash_profile ~/.bash_profile
+  ln -s $DOTFILES/.bashrc ~/.bashrc
+  ln -s $DOTFILES/.editorconfig ~/.editorconfig
+  ln -s $DOTFILES/.gemrc ~/.gemrc
+  ln -s $DOTFILES/.gitconfig ~/.gitconfig
+  ln -s $DOTFILES/.gitignore ~/.gitignore
+  ln -s $DOTFILES/.tmux.conf ~/.tmux.conf
+  ln -s $DOTFILES/.zshrc ~/.zshrc
+
 }
 
 doInstall() {
@@ -30,6 +32,7 @@ doInstall() {
 	source "$DOTFILES/installers/kerl.sh"
 	source "$DOTFILES/installers/kiex.sh"
 	source "$DOTFILES/installers/nvm.sh"
+	source "$DOTFILES/installers/rbenv.sh"
 }
 
 reloadConfig() {
@@ -42,11 +45,13 @@ reloadConfig() {
 doAll() {
 	doUpdateRepo
 	doInstall
-	doRsync
+  doLink
 }
 
-if [ "$1" == "--sync" ]; then
-	doRsync
+if [ "$1" == "--link" ]; then
+	doLink
+elif [ "$1" == "--update" ]; then
+  doUpdateRepo
 elif [ "$1" == "--install" ]; then
 	doInstall
 else

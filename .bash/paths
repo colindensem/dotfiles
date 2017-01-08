@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Local libraries to overload all others
+export PATH=./bin:$HOME/bin:$PATH

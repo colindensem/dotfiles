@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Better ls
+alias ll="ls -lha"
+
+alias reload="exec $SHELL"
+
+#Bundler
+alias b="bundle"
+
+
+# Include Local alias file
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local

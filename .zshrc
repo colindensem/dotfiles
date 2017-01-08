@@ -5,8 +5,8 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="blinks"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -58,7 +58,8 @@ setopt no_share_history
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/texbin:$HOME/bin:$PATH"
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/texbin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -72,9 +73,23 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Source dotfiles
-source ~/.aliases
-source ~/.exports
-source ~/.functions
+source ~/.bash/aliases
+source ~/.bash/env
+source ~/.bash/functions
+source ~/.bash/paths
+
+
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+
+if [ -f ~/.localrc ]; then
+  . ~/.localrc
+fi
+
+
+source $HOME/.kiex/elixirs/elixir-1.4.0.env
+eval "$(rbenv init -)"
 
 
 # Start SSH Agent
@@ -85,24 +100,21 @@ then
 fi
 
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+SSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${bkg}}%B%F{green}%}]"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{%F{red}%}*%{%f%k%b%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+PROMPT='%{%f%k%b%}
+%{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
+%{%B%F{cyan}%}$ZSH_THEME_CLOUD_PREFIX %{%f%k%b%}› '
 
-# ssh
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# RPROMPT='${vim_mode}'
+# RPROMPT2='${vim_mode}'
+RPROMPT=''
+RPROMPT2=''
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
+set t_Co=256
 
 
 # Configuration options ~ not in the dotfiles setup
