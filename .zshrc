@@ -7,7 +7,6 @@
 # time that oh-my-zsh is loaded.
 ZSH_THEME="blinks"
 
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,11 +52,9 @@ HIST_STAMPS="yyyy/mm/dd"
 plugins=(git)
 
 # User configuration
-
 setopt no_share_history
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
-
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/texbin"
 
@@ -78,19 +75,8 @@ source ~/.bash/env
 source ~/.bash/functions
 source ~/.bash/paths
 
-
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
-fi
-
-
 source $HOME/.kiex/elixirs/elixir-1.4.0.env
 eval "$(rbenv init -)"
-
 
 # Start SSH Agent
 if [ -z "$SSH_AUTH_SOCK" ] ;
@@ -98,7 +84,6 @@ then
   eval `ssh-agent -s`
   #ssh-add
 fi
-
 
 SSH_THEME_GIT_PROMPT_PREFIX=" [%{%B%F{blue}%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{%f%k%b%K{${bkg}}%B%F{green}%}]"
@@ -109,16 +94,7 @@ PROMPT='%{%f%k%b%}
 %{%K{${bkg}}%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%K{${bkg}}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
 %{%B%F{cyan}%}$ZSH_THEME_CLOUD_PREFIX %{%f%k%b%}› '
 
-# RPROMPT='${vim_mode}'
-# RPROMPT2='${vim_mode}'
-RPROMPT=''
-RPROMPT2=''
-
 set t_Co=256
 
-
 # Configuration options ~ not in the dotfiles setup
-if [[ -a ~/.localzshrc ]]
-then
-      source ~/.localzshrc
-fi
+[ -s ~/.zsh_local ] && source ~/.zsh_local

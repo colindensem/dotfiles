@@ -8,6 +8,14 @@ alias reload="exec $SHELL"
 #Bundler
 alias b="bundle"
 
+# git
+#
+# retains last commit as staged
+alias git-undo='git reset --soft HEAD\^'
+alias timeline='git log --oneline --author="`git config --get user.name`" --since="12am" --no-merges'
+
+# DOTFILES
+alias dotfiles='atom ~/code/dotfiles'
 
 # Include Local alias file
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
