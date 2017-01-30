@@ -17,6 +17,7 @@ alias timeline='git log --oneline --author="`git config --get user.name`" --sinc
 # Editors
 #
 #
+alias e='emacs -nw'
 alias emacs='emacs -nw'
 
 # DOTFILES

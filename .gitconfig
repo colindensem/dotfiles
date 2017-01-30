@@ -2,7 +2,7 @@
  	editor = vim
 	excludesfile = /home/colin/.gitignore_global
 [push]
-	default = simple
+	default = matching
 [grep]
 	extendRegexp = true
 	lineNumber = true

@@ -25,6 +25,10 @@
 #export PILOTPORT=/dev/pilot
 #export PILOTRATE=115200
 
-test -s ~/.bash/aliases && . ~/.bash/alias || true
+test -s ~/.bash/aliases && . ~/.bash/aliases | true
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
