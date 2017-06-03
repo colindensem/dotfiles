@@ -29,10 +29,8 @@ doLink() {
 
 doInstall() {
   puts "Installing helpers"
-  #source "$DOTFILES/installers/kerl.sh"
-  #source "$DOTFILES/installers/kiex.sh"
-  #source "$DOTFILES/installers/nvm.sh"
-  #source "$DOTFILES/installers/rbenv.sh"
+  source "$DOTFILES/installers/asdf.sh"
+  source "$DOTFILES/installers/asdf-plugins.sh"
 }
 
 reloadConfig() {
