@@ -9,8 +9,8 @@ puts() {
 }
 
 doUpdateRepo() {
-	puts "Updating repository"
-	git pull origin master
+  puts "Updating repository"
+  git pull origin master
 }
 
 
@@ -28,11 +28,11 @@ doLink() {
 }
 
 doInstall() {
-	puts "Installing helpers"
-	source "$DOTFILES/installers/kerl.sh"
-	source "$DOTFILES/installers/kiex.sh"
-	source "$DOTFILES/installers/nvm.sh"
-	source "$DOTFILES/installers/rbenv.sh"
+  puts "Installing helpers"
+  #source "$DOTFILES/installers/kerl.sh"
+  #source "$DOTFILES/installers/kiex.sh"
+  #source "$DOTFILES/installers/nvm.sh"
+  #source "$DOTFILES/installers/rbenv.sh"
 }
 
 reloadConfig() {
@@ -43,19 +43,19 @@ reloadConfig() {
 }
 
 doAll() {
-	doUpdateRepo
-	doInstall
+  doUpdateRepo
+  doInstall
   doLink
 }
 
 if [ "$1" == "--link" ]; then
-	doLink
+  doLink
 elif [ "$1" == "--update" ]; then
   doUpdateRepo
 elif [ "$1" == "--install" ]; then
-	doInstall
+  doInstall
 else
-	doAll
+  doAll
 fi
 
 #Always reload the config/shell environment

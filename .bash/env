@@ -5,20 +5,12 @@ export EDITOR=vim
 export VISUAL=vim
 export TERM="xterm-256color"
 
-# KERL - Erlang
-test -s "$HOME/.kerl/kerl" && export PATH="$HOME/.kerl:$PATH"
-# KIEX - Elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-
-
-
+# ASDF
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 # RUBY
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 #NODE via NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
 #HEROKU
 export PATH="/usr/local/lib/heroku/bin:$PATH"
