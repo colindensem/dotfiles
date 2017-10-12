@@ -86,3 +86,6 @@ set t_Co=256
 
 # Configuration options ~ not in the dotfiles setup
 [ -s ~/.zsh_local ] && source ~/.zsh_local
+
+
+source "/home/colin/.oh-my-zsh/custom/themes/spaceship.zsh-theme"

@@ -31,6 +31,7 @@ doInstall() {
   puts "Installing helpers"
   source "$DOTFILES/installers/asdf.sh"
   source "$DOTFILES/installers/asdf-plugins.sh"
+  source "$DOTFILES/installers/zsh-spaceship.sh"
 }
 
 reloadConfig() {
